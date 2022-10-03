@@ -5,6 +5,8 @@
 cmake_minimum_required(VERSION 3.23)
 
 # cpp standard
+set(CMAKE_CXX_COMPILER ${CMAKE_PREFIX_PATH}/bin/g++.exe)
+set(CMAKE_CXX_FLAGS "-Wall -Wshadow")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -39,7 +41,6 @@ aux_source_directory(. PROTJECT_SRC_LIST)
 add_executable(${PROJECT_NAME} ${PROTJECT_SRC_LIST})
 target_link_libraries(${PROJECT_NAME}
     PRIVATE Qt6::Widgets
-
     # PRIVATE ${LIB_UI}
     PRIVATE Qt6::Network
 )
